@@ -1,25 +1,24 @@
-password = input("Enter your password: ")
+print("Password strength evaluation complete.")password = input("Enter your password: ")
 length = len(password)
 score = 0
 if length >= 8:
     score += 1
-    print("Your password is strong.")
+    print("Your password is strong enough.")
 else:
     print("Your password is not strong enough.")
-# Variable to check for uppercase letters
-has_upper = None
-has_lower = None
-has_digit = None  
-has_special = None
+has_upper = False
+has_lower = False
+has_digit = False
+has_special = False
 for char in password:
     if char.isupper():
-        has_upper = Yes
+        has_upper = True
     elif char.islower():
-        has_lower = Yes
+        has_lower = True
     elif char.isdigit():
-        has_digit = Yes
+        has_digit = True
     elif not char.isalnum():
-        has_special = Yes
+        has_special = True
 if has_upper:
     score += 1
 if has_lower:
@@ -40,8 +39,8 @@ elif score == 3:
 elif score == 2:
     print("Your password is moderate.")
 elif score == 1:
-    print("Your password is weak.") 
-elif score == 0:
+    print("Your password is weak.")
+else:
     print("Your password is very weak.")
 
 print("Password strength evaluation complete.")
